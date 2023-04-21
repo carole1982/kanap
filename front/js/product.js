@@ -26,3 +26,23 @@ const getArticle = () => {
 }
 
 getArticle()
+
+const addToCart = document.getElementById("addToCart")
+addToCart.addEventListener("click", () =>{
+    const addProduct ={
+        quantity : document.getElementById("quantity").value,
+        color : document.getElementById("color").value,
+        id:id
+    }
+
+
+addProductLocalStorage = []
+if (localStorage.getItem("addToCard")!==null){
+    addProductLocalStorage = JSON.parse(localStorage.getItem("addToCart"))
+    addProductLocalStorage.push("addToCart", JSON.stringify(addProductLocalStorage))
+} else {
+    addProductLocalStorage.push(addProduct)
+    localStorage.setItem("addToCart", JSON.stringify(addProductLocalStorage))
+}
+
+})
